@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape the Chaos | Mercy Spa Commercial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --bg-tertiary: #fafafa;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.04);
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-muted: #86868b;
+            --accent: #ff6b00;
+            --accent-light: #ff8534;
+            --accent-soft: rgba(255, 107, 0, 0.1);
+            --accent-softer: rgba(255, 107, 0, 0.05);
+            --orange-gradient: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+            --divider: rgba(0, 0, 0, 0.06);
+            --chaos: #ff3b30;
+            --transition: #ff9500;
+            --sanctuary: #34c759;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 17px;
+            letter-spacing: -0.022em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 24px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--divider);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            width: 18px;
+            height: 1.5px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            text-align: center;
+            background: var(--bg-primary);
+        }
+
+        .hero-content {
+            max-width: 720px;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--accent-soft);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 64px);
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .hero h1 span {
+            background: var(--orange-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            display: inline-flex;
+            gap: 40px;
+            padding: 24px 40px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .meta-item {
+            text-align: left;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .meta-value.highlight {
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 17px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Scene Cards */
+        .scene-card {
+            margin-bottom: 20px;
+        }
+
+        .scene-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .scene-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--orange-gradient);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+        }
+
+        .scene-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            flex: 1;
+        }
+
+        .scene-location {
+            font-size: 12px;
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .scene-super {
+            display: inline-block;
+            padding: 10px 16px;
+            background: var(--accent-softer);
+            border-radius: var(--radius-sm);
+            font-style: italic;
+            font-size: 15px;
+            color: var(--accent);
+            margin-bottom: 16px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .scene-content p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .scene-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .direction-note {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .dialogue {
+            margin: 20px 0;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--accent);
+        }
+
+        .dialogue-character {
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .dialogue-direction {
+            font-style: italic;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .dialogue-line {
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Act Indicator */
+        .act-indicator {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 48px 0 24px;
+            padding: 0;
+        }
+
+        .act-line {
+            flex: 1;
+            height: 1px;
+            background: var(--divider);
+        }
+
+        .act-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: var(--bg-primary);
+            border: 1px solid var(--divider);
+        }
+
+        .act-label.chaos { 
+            color: var(--chaos); 
+            background: rgba(255, 59, 48, 0.08);
+            border-color: rgba(255, 59, 48, 0.15);
+        }
+        .act-label.transition { 
+            color: var(--transition); 
+            background: rgba(255, 149, 0, 0.08);
+            border-color: rgba(255, 149, 0, 0.15);
+        }
+        .act-label.sanctuary { 
+            color: var(--sanctuary); 
+            background: rgba(52, 199, 89, 0.08);
+            border-color: rgba(52, 199, 89, 0.15);
+        }
+
+        /* Treatment Grid */
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .treatment-card {
+            padding: 24px;
+        }
+
+        .treatment-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.01em;
+        }
+
+        .treatment-card h4 svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
+            stroke-width: 1.5;
+        }
+
+        .treatment-card ul {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .treatment-card li {
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .treatment-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Visual Approach Table */
+        .approach-table {
+            width: 100%;
+            margin-top: 24px;
+            border-collapse: collapse;
+        }
+
+        .approach-table th,
+        .approach-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .approach-table th {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            background: var(--bg-secondary);
+        }
+
+        .approach-table th:first-child {
+            border-radius: var(--radius-sm) 0 0 0;
+        }
+
+        .approach-table th:last-child {
+            border-radius: 0 var(--radius-sm) 0 0;
+        }
+
+        .approach-table td {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .approach-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .approach-table td:first-child {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Production Schedule */
+        .schedule-wrapper {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--card-border);
+        }
+
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .schedule-header h4 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .schedule-header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .time-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--accent-soft);
+            border-radius: var(--radius-md);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .time-badge svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-light), var(--sanctuary));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 56px;
+            padding-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            background: var(--card-bg);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(2) .timeline-marker {
+            border-color: var(--accent-light);
+        }
+
+        .timeline-item:nth-child(3) .timeline-marker {
+            border-color: var(--transition);
+        }
+
+        .timeline-item:nth-child(4) .timeline-marker {
+            border-color: var(--sanctuary);
+        }
+
+        .timeline-time {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-tasks {
+            list-style: none;
+        }
+
+        .timeline-tasks li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 4px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .timeline-tasks li::before {
+            content: '→';
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        /* Closing Card */
+        .closing-card {
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--orange-gradient);
+            color: white;
+        }
+
+        .closing-logo {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .closing-tagline {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .closing-cta {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        /* Summary Grid */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .summary-card {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .summary-card .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .summary-card .value {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Key Notes */
+        .key-note {
+            padding: 20px 24px;
+            background: var(--accent-softer);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--accent);
+            margin-top: 24px;
+        }
+
+        .key-note p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .key-note strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Shot List */
+        .shot-list {
+            margin-top: 20px;
+        }
+
+        .shot-list h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .shot-list ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .shot-list li {
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .shot-list li:hover {
+            background: var(--accent-softer);
+            color: var(--text-primary);
+        }
+
+        /* Emotional Journey */
+        .journey-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .journey-step {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .journey-step:nth-child(1) {
+            background: rgba(255, 59, 48, 0.1);
+            color: var(--chaos);
+        }
+        .journey-step:nth-child(2) {
+            background: rgba(255, 149, 0, 0.1);
+            color: var(--transition);
+        }
+        .journey-step:nth-child(3) {
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--accent);
+        }
+        .journey-step:nth-child(4) {
+            background: rgba(255, 133, 52, 0.1);
+            color: var(--accent-light);
+        }
+        .journey-step:nth-child(5) {
+            background: rgba(52, 199, 89, 0.1);
+            color: var(--sanctuary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 24px;
+            text-align: center;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--divider);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            border: 1px solid var(--divider);
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .back-to-top:hover svg {
+            stroke: white;
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text-primary);
+            stroke-width: 2;
+            transition: stroke 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 16px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 52px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--divider);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -4px);
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero-meta {
+                gap: 24px;
+                padding: 20px 24px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .card {
+                padding: 24px;
+                border-radius: var(--radius-lg);
+            }
+
+            .scene-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .schedule-header {
+                flex-direction: column;
+            }
+
+            .timeline::before {
+                left: 16px;
+            }
+
+            .timeline-item {
+                padding-left: 48px;
+            }
+
+            .timeline-marker {
+                left: 6px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .treatment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .approach-table {
+                font-size: 13px;
+            }
+
+            .approach-table th,
+            .approach-table td {
+                padding: 10px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .meta-item {
+                text-align: center;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-steps {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Mercy<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#script">Script</a></li>
+                <li><a href="#treatment">Treatment</a></li>
+                <li><a href="#production">Production</a></li>
+                <li><a href="#summary">Summary</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <span class="dot"></span>
+                Shooting Today
+            </span>
+            <h1>Escape the <span>Chaos</span></h1>
+            <p>A visual journey from urban chaos to the transformative sanctuary of Mercy Spa.</p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client</div>
+                    <div class="meta-value">Mercy Spa</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">60 Seconds</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Shoot Time</div>
+                    <div class="meta-value highlight">5 Hours Max</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Location</div>
+                    <div class="meta-value">Abuja, Nigeria</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Script Section -->
+    <section id="script">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Part One</div>
+                <h2 class="section-title">The Script</h2>
+                <p class="section-description">A narrative journey through chaos, discovery, and transformation.</p>
+            </div>
+
+            <!-- Act I: Chaos -->
+            <div class="act-indicator">
+                <div class="act-line"></div>
+                <span class="act-label chaos">Act I: Chaos</span>
+                <div class="act-line"></div>
+            </div>
+
+            <!-- Scene 1 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">01</div>
+                    <h3 class="scene-title">Office Chaos</h3>
+                    <span class="scene-location">INT. Corporate Office - Day</span>
+                </div>
+                <div class="scene-super">"Every day comes with its own chaos"</div>
+                <div class="scene-content">
+                    <p>We open on ARIAN (late 20s-early 30s), visibly stressed at her cluttered desk. Papers everywhere. Deadline notices. Coworkers dump more files on her desk.</p>
+                    <p>Her phone RINGS—home calling. She touches door handles, desk surfaces, shared equipment. Distracted, she touches her face.</p>
+                    
+                    <div class="dialogue">
+                        <div class="dialogue-character">Arian</div>
+                        <div class="dialogue-direction">(catching herself)</div>
+                        <div class="dialogue-line">Not again, Arian. Your hands aren't supposed to touch your face.</div>
+                    </div>
+                    
+                    <p class="direction-note">More calls. More surfaces. The cycle repeats.</p>
+                </div>
+            </div>
+
+            <!-- Scene 2 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">02</div>
+                    <h3 class="scene-title">False Relief</h3>
+                    <span class="scene-location">EXT. City Street - Late Afternoon</span>
+                </div>
+                <div class="scene-super">"And when you think it's all over..."</div>
+                <div class="scene-content">
+                    <p>Arian walks along an empty street, disheveled, carrying a bag and folder. She wipes sweat from her brow with her file-holding hand.</p>
+                    <p>Her phone PINGS: "Your driver has arrived."</p>
+                    <p class="direction-note">Car door SHUTS. She's in.</p>
+                </div>
+            </div>
+
+            <!-- Scene 3 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">03</div>
+                    <h3 class="scene-title">Commute Chaos</h3>
+                    <span class="scene-location">INT./EXT. Ride-Share Car - Continuous</span>
+                </div>
+                <div class="scene-super">"There's yet more"</div>
+                <div class="scene-content">
+                    <p>Arian sits in the backseat, gazing out the window.</p>
+                    <p>Through the glass: CHAOS. Traffic noise. Market hawkers. Bus stops. Horn blasts. Overwhelming cacophony.</p>
+                    <p>She watches it all pass by, exhausted.</p>
+                    <p>Then—something catches her eye. She straightens up, alert.</p>
+                    <p class="direction-note">(We don't show what she sees. We only see her reaction—a flash of curiosity, recognition.)</p>
+                    <p>She leans forward and GENTLY TAPS the driver's shoulder from behind.</p>
+                    
+                    <div class="dialogue">
+                        <div class="dialogue-character">Arian</div>
+                        <div class="dialogue-direction">(intrigued, to herself)</div>
+                        <div class="dialogue-line">Must be new...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act II: Transition -->
+            <div class="act-indicator">
+                <div class="act-line"></div>
+                <span class="act-label transition">Act II: Transition</span>
+                <div class="act-line"></div>
+            </div>
+
+            <!-- Scene 4 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">04</div>
+                    <h3 class="scene-title">The Discovery</h3>
+                    <span class="scene-location">EXT. Quiet Street - Magic Hour</span>
+                </div>
+                <div class="scene-super">"Wait... what was that?"</div>
+                <div class="scene-content">
+                    <p><strong>ESTABLISHING SHOT:</strong> An empty, serene road.</p>
+                    <p>The car REVERSES into frame, driving backward through the calm.</p>
+                    <p><strong>INT. RIDE-SHARE CAR - CONTINUOUS</strong></p>
+                    <p>Arian replays the moment in her mind, still processing what she glimpsed.</p>
+                    
+                    <div class="dialogue">
+                        <div class="dialogue-character">Arian (V.O.)</div>
+                        <div class="dialogue-line">Wow. This is...</div>
+                    </div>
+                    
+                    <p>A magical UI button materializes in front of her bearing "MERCY". She taps it.</p>
+                </div>
+            </div>
+
+            <!-- Act III: Sanctuary -->
+            <div class="act-indicator">
+                <div class="act-line"></div>
+                <span class="act-label sanctuary">Act III: Sanctuary</span>
+                <div class="act-line"></div>
+            </div>
+
+            <!-- Scene 5 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">05</div>
+                    <h3 class="scene-title">The Transformation</h3>
+                    <span class="scene-location">INT. Mercy Spa - Golden Hour</span>
+                </div>
+                <div class="scene-super">"Located in the very heart of Abuja"</div>
+                <div class="scene-content">
+                    <p><strong>TRANSITION:</strong> Digital effect transports Arian into the spa.</p>
+                    <p>She appears in a fresh outfit—mid-glam. We see glimpses of her transformation in progress:</p>
+                    <ul style="list-style: none; margin: 16px 0; padding-left: 16px; color: var(--text-secondary); font-size: 14px;">
+                        <li style="padding: 4px 0;">• Manicure session</li>
+                        <li style="padding: 4px 0;">• Hair styling</li>
+                        <li style="padding: 4px 0;">• Pedicure station</li>
+                        <li style="padding: 4px 0;">• Serene facial treatment</li>
+                    </ul>
+                    <p><strong>SPEED RAMPS</strong> through elegant spaces:</p>
+                    <ul style="list-style: none; margin: 16px 0; padding-left: 16px; color: var(--text-secondary); font-size: 14px;">
+                        <li style="padding: 4px 0;">• Tranquil reception</li>
+                        <li style="padding: 4px 0;">• Modern treatment rooms</li>
+                        <li style="padding: 4px 0;">• Chic salon stations</li>
+                        <li style="padding: 4px 0;">• Relaxation lounge</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scene 6 -->
+            <div class="card scene-card">
+                <div class="scene-header">
+                    <div class="scene-number">06</div>
+                    <h3 class="scene-title">The Location</h3>
+                    <span class="scene-location">EXT. Abuja Cityscape - Golden Hour</span>
+                </div>
+                <div class="scene-content">
+                    <p><strong>DRONE SHOT:</strong> Soaring over Abuja landmarks, pinpointing Mercy Spa's prime location in the city center.</p>
+                </div>
+            </div>
+
+            <!-- Closing -->
+            <div class="card closing-card">
+                <div class="closing-logo">Mercy</div>
+                <div class="closing-tagline">Your escape in the heart of Abuja</div>
+                <div class="closing-cta">[Contact Info / Social Handles]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director's Treatment Section -->
+    <section id="treatment">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Part Two</div>
+                <h2 class="section-title">Director's Treatment</h2>
+                <p class="section-description">Visual approach, technical direction, and creative vision.</p>
+            </div>
+
+            <!-- Concept -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Concept</h4>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">This commercial contrasts the relentless chaos of modern urban life with the transformative sanctuary of Mercy Spa. We're selling more than services—we're selling escape, relief, and rediscovery. The spa exists as a real landmark—hidden in plain sight amidst the city's noise—waiting to be discovered.</p>
+            </div>
+
+            <!-- Visual Approach -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 20px; font-weight: 600;">Visual Approach</h4>
+                <div style="overflow-x: auto;">
+                    <table class="approach-table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Chaos Scenes</th>
+                                <th>Spa Scenes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Color</td>
+                                <td>Cool, desaturated</td>
+                                <td>Warm, golden</td>
+                            </tr>
+                            <tr>
+                                <td>Camera</td>
+                                <td>Handheld, tight</td>
+                                <td>Stabilized, spacious</td>
+                            </tr>
+                            <tr>
+                                <td>Editing</td>
+                                <td>Quick, overlapping</td>
+                                <td>Measured, breathing</td>
+                            </tr>
+                            <tr>
+                                <td>Sound</td>
+                                <td>Layered, overwhelming</td>
+                                <td>Soft, ambient</td>
+                            </tr>
+                            <tr>
+                                <td>Emotion</td>
+                                <td>Stress, exhaustion</td>
+                                <td>Peace, transformation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Treatment Cards Grid -->
+            <div class="treatment-grid">
+                <div class="card treatment-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        Act I: Chaos
+                    </h4>
+                    <ul>
+                        <li>Harsh fluorescents, cool blues and grays</li>
+                        <li>Handheld, tight frames, claustrophobic</li>
+                        <li>Quick cuts, overlapping audio</li>
+                        <li>Layered sound: phones, traffic, voices</li>
+                    </ul>
+                </div>
+
+                <div class="card treatment-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                        Act II: Transition
+                    </h4>
+                    <ul>
+                        <li>Arian's glimpse is the narrative hinge</li>
+                        <li>Handheld to stabilized transition</li>
+                        <li>Reverse drive symbolizes "rewinding"</li>
+                        <li>Gradual warming of color tones</li>
+                    </ul>
+                </div>
+
+                <div class="card treatment-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M12 3a9 9 0 1 0 9 9"/>
+                            <path d="M12 3v6l4 2"/>
+                        </svg>
+                        Act III: Sanctuary
+                    </h4>
+                    <ul>
+                        <li>Warm earth tones, soft golds</li>
+                        <li>Fluid gimbal, elegant speed ramps</li>
+                        <li>Let moments land and breathe</li>
+                        <li>Ambient spa soundscape</li>
+                    </ul>
+                </div>
+
+                <div class="card treatment-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        The Glimpse
+                    </h4>
+                    <ul>
+                        <li>We NEVER show what Arian sees</li>
+                        <li>Only capture her reaction shift</li>
+                        <li>Creates intrigue through implication</li>
+                        <li>Subjective discovery experience</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Direction -->
+            <div class="card" style="margin-top: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 16px; font-weight: 600;">Scene 3: The Glimpse Moment</h4>
+                <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 20px;">This approach creates intrigue through <strong style="color: var(--text-primary);">implication rather than exposition</strong>:</p>
+                
+                <div class="shot-list">
+                    <h5>Camera Direction</h5>
+                    <ul>
+                        <li>Close-up on Arian's face as she looks out window</li>
+                        <li>Her eyes track something passing by</li>
+                        <li>Subtle shift from tiredness to curiosity</li>
+                        <li>This is the pivot—her expression sells the discovery</li>
+                    </ul>
+                </div>
+
+                <div class="key-note">
+                    <p><strong>Narrative Logic:</strong> Mercy Spa exists as a real physical landmark in the city. Arian discovers it organically—not through an ad, not through her phone—but by simply <em>seeing it</em> while stuck in traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Section -->
+    <section id="production">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Part Three</div>
+                <h2 class="section-title">Production Plan</h2>
+                <p class="section-description">One-day shoot schedule optimized for 5 hours.</p>
+            </div>
+
+            <!-- Production Schedule -->
+            <div class="schedule-wrapper">
+                <div class="schedule-header">
+                    <div>
+                        <h4>Today's Shoot Schedule</h4>
+                        <p>Single day production • All scenes</p>
+                    </div>
+                    <div class="time-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        5 Hours Max
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-time">Hour 1 (0:00 - 1:00)</div>
+                        <div class="timeline-title">Office Chaos Scenes</div>
+                        <ul class="timeline-tasks">
+                            <li>Scene 1: All office interior shots</li>
+                            <li>Desk chaos, phone calls, surface touches</li>
+                            <li>Arian's dialogue and reactions</li>
+                            <li>Quick insert shots of deadlines, papers</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-time">Hour 2 (1:00 - 2:00)</div>
+                        <div class="timeline-title">Street + Car Scenes</div>
+                        <ul class="timeline-tasks">
+                            <li>Scene 2: Arian walking, end of day</li>
+                            <li>Scene 3: Car interior—commute chaos</li>
+                            <li>The glimpse moment + shoulder tap</li>
+                            <li>B-roll through car windows</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-time">Hour 3 (2:00 - 3:00)</div>
+                        <div class="timeline-title">Transition + Discovery</div>
+                        <ul class="timeline-tasks">
+                            <li>Scene 4: Quiet road establishing shot</li>
+                            <li>Reverse driving sequence</li>
+                            <li>Arian's reaction to magical button</li>
+                            <li>Transition moment setup</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-time">Hours 4-5 (3:00 - 5:00)</div>
+                        <div class="timeline-title">Mercy Spa + Aerials</div>
+                        <ul class="timeline-tasks">
+                            <li>Scene 5: Spa transformation shots</li>
+                            <li>Speed ramps through spa spaces</li>
+                            <li>Manicure, hair, treatment details</li>
+                            <li>Scene 6: Drone aerials of Abuja</li>
+                            <li>Final establishing shots</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Reference Locations -->
+            <div class="card" style="margin-top: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 20px; font-weight: 600;">Location Checklist</h4>
+                
+                <div class="treatment-grid" style="margin-top: 0;">
+                    <div style="padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md);">
+                        <h5 style="font-size: 14px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary);">📍 Office Space</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary);">Open-plan desk area. 1 hour access needed.</p>
+                    </div>
+                    <div style="padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md);">
+                        <h5 style="font-size: 14px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary);">📍 City Street</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary);">Empty street + busy market areas for B-roll.</p>
+                    </div>
+                    <div style="padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md);">
+                        <h5 style="font-size: 14px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary);">📍 Ride-Share Car</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary);">Clean interior, space for camera setup.</p>
+                    </div>
+                    <div style="padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md);">
+                        <h5 style="font-size: 14px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary);">📍 Mercy Spa</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary);">Full access: reception, treatment rooms, salon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Time-Saving Notes -->
+            <div class="key-note" style="margin-top: 20px;">
+                <p><strong>⚡ Time-Saving Strategy:</strong> Pre-light spa location during street scenes. Have talent in partial glam during car scenes to reduce transformation time. Drone operator can capture aerials while interior spa shots are being lit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Part Four</div>
+                <h2 class="section-title">Summary</h2>
+                <p class="section-description">Key takeaways and brand messaging.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 12px; font-weight: 600; color: var(--accent);">Brand Message</h4>
+                <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">When life overwhelms, <strong style="color: var(--text-primary);">Mercy Spa</strong> offers transformation. Located in the heart of the city, it's your escape hidden in plain sight.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4 style="font-size: 17px; margin-bottom: 16px; font-weight: 600;">Emotional Journey</h4>
+                <div class="journey-steps">
+                    <span class="journey-step">1. Recognition</span>
+                    <span class="journey-step">2. Surprise</span>
+                    <span class="journey-step">3. Curiosity</span>
+                    <span class="journey-step">4. Aspiration</span>
+                    <span class="journey-step">5. Action</span>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+                <div class="card summary-card">
+                    <div class="label">Tone</div>
+                    <div class="value">Empathetic, Aspirational, Sophisticated</div>
+                </div>
+                <div class="card summary-card">
+                    <div class="label">Target</div>
+                    <div class="value">Urban Professionals 25-45</div>
+                </div>
+                <div class="card summary-card">
+                    <div class="label">Emotion</div>
+                    <div class="value">Overwhelm → Relief → Aspiration</div>
+                </div>
+                <div class="card summary-card">
+                    <div class="label">Takeaway</div>
+                    <div class="value">Your escape is closer than you think</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px; padding: 28px; text-align: center; background: var(--bg-secondary); border: none;">
+                <p style="font-style: italic; color: var(--text-secondary); font-size: 15px; max-width: 640px; margin: 0 auto; line-height: 1.7;">
+                    "The success of this commercial hinges on the <strong style="color: var(--text-primary);">contrast</strong>—the audience must feel the chaos viscerally so that Mercy's sanctuary feels like genuine relief."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Mercy Spa Commercial — Escape the Chaos — Shooting Today</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for section animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Staggered animation for cards
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 80);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(12px)';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease';
+            cardObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
